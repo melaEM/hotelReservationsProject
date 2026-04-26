@@ -1,6 +1,6 @@
 import random
 import datetime
-from datetime import timedelta
+from datetime import timedelta, datetime
 import time
 days_selected = True
 
@@ -15,27 +15,32 @@ class Reservations:
         pass
 
 arrival_date = input("arrival")
-departure_date = input("departure")    
+# departure_date = input("departure")    
 
 room_count = 101
 room_list = []
 
+arr_timestamp = datetime.strptime(arrival_date, "%d/%m/%Y")
+print(arr_timestamp.timestamp())
 Alr_reserved = False
-min_date_evil = datetime.date.today() + datetime.timedelta(days=1)
-max_date_evil = datetime.date(2027, 12, 31)
-allowed_range = (max_date_evil - min_date_evil).days
+# min_date_evil = datetime.date.today() + datetime.timedelta(days=1)
+# max_date_evil = datetime.date(2027, 12, 31)
+# allowed_range = (max_date_evil - min_date_evil).days
 
-for random_reservation_amount in range(random.randint(3, 8)):
-    room_list.append(room_count)
-    rand_type = random.choice(["Single","Double"])
-    rand_start = random.randint(0, allowed_range)
-    rand_end = random.randint(1,14)
-    rand_arr_date = min_date_evil + datetime.timedelta(days=rand_start)
-    rand_dep_date = rand_arr_date + datetime.timedelta(days=rand_end)
-    arr_timestamp = timestamp(rand_arr_date)
-    dep_timestamp = timestamp(rand_dep_date)
-    if days_selected and arr_timestamp <timestamp(arrival_date)> dep_timestamp or arr_timestamp <timestamp(departure_date)> dep_timestamp:
-        Alr_reserved = True 
-    room_list[i] = Reservations(rand_type,arr_timestamp,dep_timestamp,Alr_reserved)
-    print(room_list[i].room_type)
-    print(room_list[i].reservations)
+# for random_reservation_amount in range(random.randint(3, 8)):
+#     room_list.append(room_count)
+#     rand_type = random.choice(["Single","Double"])
+#     rand_start = random.randint(0, allowed_range)
+#     rand_end = random.randint(1,14)
+#     rand_arr_date = min_date_evil + datetime.timedelta(days=rand_start)
+#     rand_dep_date = rand_arr_date + datetime.timedelta(days=rand_end)
+#     arr_timestamp = datetime.strptime(rand_arr_date, "%d/%m/%Y").timestamp()
+
+#     print(arr_timestamp)
+
+#     dep_timestamp = timestamp(rand_dep_date)
+#     if days_selected and arr_timestamp <timestamp(arrival_date)> dep_timestamp or arr_timestamp <timestamp(departure_date)> dep_timestamp:
+#         Alr_reserved = True 
+#     room_list[i] = Reservations(rand_type,arr_timestamp,dep_timestamp,Alr_reserved)
+#     print(room_list[i].room_type)
+#     print(room_list[i].reservations)
