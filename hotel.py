@@ -107,7 +107,7 @@ def date_picker():
     arrival_label = Label(calendar_window, text="Arrival date:",font=("Times New Roman", 20,"bold"),  bg="#fffcf8", fg="#bd8274", width = 20, height = 5)
     arrival_label.grid(column = 0, row = 1)
 
-    arrival_enter = DateEntry(calendar_window ,selectmode = "day",mindate = arrival_date, maxdate = date(2027, 12, 31))
+    arrival_enter = DateEntry(calendar_window ,selectmode = "day",mindate = arrival_date, maxdate = date(2027, 12, 31), date_pattern="dd/mm/yyyy")
     arrival_enter.grid(column = 1, row = 1)
     arrival_enter.bind('<<DateEntrySelected>>',date_check)
 
@@ -115,7 +115,7 @@ def date_picker():
     departure_label = Label(calendar_window, text="Departure date:  ",font=("Times New Roman", 20, "bold"),  bg="#fffcf8", fg="#bd8274", width = 20, height = 5)
     departure_label.grid(column = 0, row = 2)
 
-    departure_enter = DateEntry(calendar_window ,selectmode = "day", mindate = departure_date, maxdate = date(2027, 12, 31))
+    departure_enter = DateEntry(calendar_window ,selectmode = "day", mindate = departure_date, maxdate = date(2027, 12, 31),date_pattern="dd/mm/yyyy")
     departure_enter.grid(column = 1, row = 2)
     departure_enter.bind('<<DateEntrySelected>>', date_check)
 
